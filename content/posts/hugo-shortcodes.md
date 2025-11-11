@@ -9,12 +9,6 @@ summary: This post shows the default Hugo shortcodes and how they are rendered.
 toc: true
 ---
 
-## Details
-
-{{< details summary="See the details" >}}
-This is a **bold** word.
-{{< /details >}}
-
 ## Highlight
 
 {{< highlight go-html-template >}}
