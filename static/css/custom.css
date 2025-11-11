@@ -1,0 +1,60 @@
+/* 移除所有标题前的 # 符号 */
+.post h1::before,
+.post h2::before,
+.post h3::before,
+.post h4::before,
+.post h5::before,
+.post h6::before,
+article h1::before,
+article h2::before,
+article h3::before,
+article h4::before,
+article h5::before,
+article h6::before {
+  content: "" !important;
+  display: none !important;
+}
+
+/* 设置标题大小 */
+.post h1, article h1 {
+  font-size: 2.2em !important;
+  font-weight: 700 !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.post h2, article h2 {
+  font-size: 1.8em !important;
+  font-weight: 700 !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.post h3, article h3 {
+  font-size: 1.5em !important;
+  font-weight: 700 !important;
+  margin-top: 1em !important;
+  margin-bottom: 0.6em !important;
+}
+
+.post h4, article h4 {
+  font-size: 1.3em !important;
+  font-weight: 700 !important;
+  margin-top: 0.8em !important;
+  margin-bottom: 0.5em !important;
+}
+
+.post h5, article h5 {
+  font-size: 1.1em !important;
+  font-weight: 700 !important;
+  margin-top: 0.8em !important;
+  margin-bottom: 0.4em !important;
+}
+
+.post h6, article h6 {
+  font-size: 1em !important;
+  font-weight: 700 !important;
+  margin-top: 0.8em !important;
+  margin-bottom: 0.3em !important;
+  color: #666 !important;
+}
