@@ -1,0 +1,60 @@
+{{ if .Params.comments | default false }}
+<section class="mt-5 pt-4 border-top">
+  <h3 class="h5 mb-3">讨论</h3>
+
+  <!-- Cusdis 评论区 -->
+  <div
+    id="cusdis_thread"
+    data-host="{{ .Site.Params.cusdis.host }}"
+    data-app-id="{{ .Site.Params.cusdis.appId }}"
+    data-page-id="{{ .RelPermalink }}"
+    data-page-url="{{ .Permalink }}"
+    data-page-title="{{ .Title }}"
+  ></div>
+
+  <!-- Cusdis JS -->
+  <script
+    async
+    defer
+    src="{{ .Site.Params.cusdis.host }}/js/cusdis.es.js"
+    onload="injectCusdisDarkStyles()"
+  ></script>
+
+  <!-- 动态注入暗色样式 -->
+  <script>
+    function injectCusdisDarkStyles() {
+      const iframe = document.querySelector("#cusdis_thread iframe");
+      if (!iframe) return;
+
+      iframe.onload = function () {
+        const style = document.createElement("style");
+        style.textContent = `
+        * { color: #e5e7eb !important; fill: #e5e7eb !important; }
+        input, textarea {
+          color: #f3f4f6 !important;
+          background: rgba(255, 255, 255, 0.08) !important;
+          border: 1px solid #4b5563 !important;
+        }
+        input::placeholder, textarea::placeholder { color: #9ca3af !important; }
+        
+        /* 提交按钮修复 */
+        button, .cusdis-btn {
+          background: #4b5563 !important;
+          color: #ffffff !important;
+          border: 1px solid #6b7280 !important;
+          border-radius: 6px !important;
+          padding: 0.5rem 1rem !important;
+        }
+        button:hover, .cusdis-btn:hover {
+          background: #5b6370 !important;
+        }
+        
+        .cusdis-comment-time { color: #9ca3af !important; }
+        body { background: transparent !important; }
+      `;
+        iframe.contentDocument.head.appendChild(style);
+      };
+    }
+  </script>
+</section>
+{{ end }}

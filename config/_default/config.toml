@@ -34,6 +34,10 @@ theme = "preferred_color_scheme"
 language = "en"
 lazyLoading = true
 
+[params.cusdis]
+  host = "https://cusdis.com"
+  appId = "577a2583-65e4-4195-b410-412b79612f21"
+
 # Navigation
 [menu]
   [[menu.main]]

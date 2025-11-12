@@ -442,3 +442,55 @@ article h6::before {
 body, main {
   font-family: 'Literata', "Noto Serif SC", "Microsoft YaHei", "Hiragino Sans GB", serif !important;
 }
+
+/* 修改评论区样式 */
+/* ==================== Cusdis 暗色模式完美适配 ==================== */
+
+/* 1. 强制 iframe 背景透明 */
+#cusdis_thread iframe {
+  background: transparent !important;
+}
+
+/* 2. 强制所有文字颜色（穿透 iframe） */
+#cusdis_thread iframe *,
+#cusdis_thread iframe input,
+#cusdis_thread iframe textarea,
+#cusdis_thread iframe button,
+#cusdis_thread iframe .cusdis-comment-content,
+#cusdis_thread iframe .cusdis-comment-author,
+#cusdis_thread iframe .cusdis-comment-email,
+#cusdis_thread iframe .cusdis-comment-time {
+  color: #e5e7eb !important; /* 浅灰白 */
+  fill: #e5e7eb !important;
+}
+
+/* 3. 输入框背景与边框 */
+#cusdis_thread iframe input,
+#cusdis_thread iframe textarea {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid #4b5563 !important;
+  color: #f3f4f6 !important;
+}
+
+/* 4. 占位文字 */
+#cusdis_thread iframe input::placeholder,
+#cusdis_thread iframe textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+/* 5. 按钮文字 */
+#cusdis_thread iframe button {
+  color: #ffffff !important;
+}
+
+/* 6. 禁用 Cusdis 自动深色切换（避免冲突） */
+[data-theme="dark"] #cusdis_thread iframe {
+  filter: none !important;
+}
+
+/* 7. 响应式：小屏幕优化 */
+@media (max-width: 768px) {
+  #cusdis_thread iframe {
+    min-height: 400px !important;
+  }
+}
