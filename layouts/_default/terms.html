@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div class="container pt-5">
+    <div class="row mt-5 pt-5">
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    </div>
+
+    {{ $letters := split "ABCDEFGHIJKLMNOPQRSTUVWXYZ" "" }}
+    <div class="d-flex flex-column align-items-start">
+
+    {{ range sort .Site.Taxonomies.tags }}
+        {{ $name := .Page.Title }}
+
+        {{/* ========== 关键：计算 $firstChar（支持中英文）========== */}}
+        {{ $firstChar := "" }}
+        {{ $firstRune := index (split $name "") 0 }}
+        {{ $isCN := ge (len $firstRune) 3 }}
+
+        {{ if $isCN }}
+            {{ $map := dict
+                "人" "R" "工" "G" "智" "Z" "能" "N"
+                "深" "S" "度" "D" "学" "X" "机" "J"
+                "器" "Q" "自" "Z" "然" "R" "语" "Y"
+                "计" "J" "算" "S" "网" "W" "数" "S"
+                "据" "J" "云" "Y" "区" "Q" "链" "L"
+                "前" "Q" "端" "D" "后" "H" "移" "Y"
+                "测" "C" "试" "S" "产" "C" "品" "P"
+                "设" "S" "安" "A" "全" "Q" "防" "F"
+                "微" "W" "服" "F" "架" "J" "持" "C"
+                "创" "C" "业" "Y" "投" "T" "资" "Z"
+                "健" "J" "康" "K" "医" "Y" "教" "J"
+                "金" "J" "融" "R" "文" "W" "艺" "Y"
+                "游" "Y" "戏" "X" "电" "D" "竞" "J"
+                "智" "Z" "慧" "H" "科" "K" "技" "J"
+                "开" "K" "发" "F" "工" "G" "程" "C"
+                "标" "B" "签" "Q" "分" "F" "类" "L"
+                "博" "B" "生" "S" "活" "H" "习" "X"
+                "娱" "Y" "乐" "L" "两" "L" "性" "X"
+                "编" "B" "程" "C" "心" "X" "理" "L"
+                "地" "D" "外" "W" "玄" "X" "神" "S"
+                "秘" "M" "禅" "C" "宗" "Z" "磁" "C"
+            }}
+            {{ $firstChar = index $map $firstRune }}
+            {{ if not $firstChar }}{{ $firstChar = "#" }}{{ end }}
+        {{ else }}
+            {{ $firstChar = upper (substr $name 0 1) }}
+        {{ end }}
+
+        {{ if or (in $letters $firstChar) (eq $firstChar "#") }}
+            {{ $curLetter := $.Scratch.Get "curLetter" }}
+            {{ if ne $firstChar $curLetter }}
+                {{ $.Scratch.Set "curLetter" $firstChar }}
+                <span class="terms-char pt-2 pb-1">
+                    {{ if eq $firstChar "#" }}#{{ else }}{{ $firstChar }}{{ end }}
+                </span>
+            {{ end }}
+
+            {{/* 关键修复：链接到标签文章列表页 */}}
+            <a class="badge text-uppercase" 
+               href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}/">
+              {{ $name }} ({{ .Count }})
+            </a>
+        {{ end }}
+    {{ end }}
+
+    </div>
+</div>
+{{ end }}

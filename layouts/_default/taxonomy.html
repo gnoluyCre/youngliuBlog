@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="container pt-5">
+    <div class="row mt-5 pt-5">
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    </div>
+
+    <h1 class="h5 mb-3">
+        与 <span class="text-lowercase underline">{{ .Title }}</span> 相关的内容:
+    </h1>
+
+    {{ .Content }}
+
+    {{ if not .Pages }}
+        <p class="text-muted">No posts found with this tag.</p>
+    {{ else }}
+        {{ range .Pages }}
+            <div class="row mb-4 border-bottom pb-3">
+                {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+                {{ $dateHuman := .Date | time.Format ":date_long" }}
+                <time class="small text-muted" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+                <h2 class="h5 mb-1">
+                    <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                </h2>
+                {{ if $.Site.Params.showPostsSummary }}
+                    <p class="small opacity-75 mb-0">{{ .Summary }}</p>
+                {{ end }}
+            </div>
+        {{ end }}
+    {{ end }}
+</div>
+{{ end }}
