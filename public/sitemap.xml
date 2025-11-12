@@ -17,14 +17,20 @@
     <loc>http://localhost:1313/posts/%E6%88%91%E7%9A%84%E6%96%B0%E6%96%87%E7%AB%A0/</loc>
     <lastmod>2025-11-10T21:08:49+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/draft/</loc>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/draft-sample-post/</loc>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/toc-showcase/</loc>
     <lastmod>2025-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/themes/</loc>
     <lastmod>2025-04-02T00:00:00+00:00</lastmod>
