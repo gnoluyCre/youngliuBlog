@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap");
 
 body {
   background-color: var(--bg-color) !important;
 }
 
-body, main {
+body,
+main {
   height: 100%;
-  font-family: 'Literata', serif !important;
+  font-family: "Literata", serif !important;
   font-optical-sizing: auto;
   font-style: normal;
-  font-size: .95em;
+  font-size: 0.95em;
   font-weight: normal;
   color: var(--font-color) !important;
 }
@@ -24,11 +25,14 @@ body, main {
   height: 100%;
 }
 
-nav a, a {
+nav a,
+a {
   text-decoration: none !important;
 }
 
-nav a:hover, a:hover, .list-post-title a:hover {
+nav a:hover,
+a:hover,
+.list-post-title a:hover {
   text-decoration: underline !important;
 }
 
@@ -66,7 +70,7 @@ table:not(.gist-data *) {
 
 th:not(.gist-data *),
 td:not(.gist-data *) {
-  padding: .5rem;
+  padding: 0.5rem;
   text-align: left;
 }
 
@@ -79,27 +83,27 @@ td:not(.gist-data *) {
   border-bottom: 2px solid var(--bg-variant) !important;
 }
 
-ul > li:has(input[type=checkbox]) {
+ul > li:has(input[type="checkbox"]) {
   list-style-type: none;
 }
 
 code {
-  font-family: 'Red Hat Mono', serif !important;
+  font-family: "Red Hat Mono", serif !important;
 }
 
 code:not(.highlight *) {
   color: var(--secondary);
   font-weight: 600;
   user-select: all;
-  padding-left: .3em;
-  padding-right: .3em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
 }
 
 .highlight > div {
   padding: 0 1em;
 }
 
-.highlight > pre  {
+.highlight > pre {
   padding: 1em;
 }
 
@@ -109,7 +113,7 @@ mark {
 
 kbd {
   background-color: var(--bg-variant) !important;
-  font-family: 'Red Hat Mono', monospace !important;
+  font-family: "Red Hat Mono", monospace !important;
   font-weight: bold;
 }
 
@@ -154,8 +158,9 @@ kbd {
   color: var(--secondary);
 }
 
-.post article a:not(.footnote-backref)::after, footer a::after {
-  content: " ↗"
+.post article a:not(.footnote-backref)::after,
+footer a::after {
+  content: " ↗";
 }
 
 .post article a:has(img)::after {
@@ -167,7 +172,7 @@ kbd {
   color: var(--primary);
 }
 
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-item + .breadcrumb-item::before {
   color: #6c757d !important;
 }
 
@@ -182,11 +187,15 @@ kbd {
 }
 
 .underline {
-	background-image: linear-gradient(to right, var(--secondary), var(--secondary));
-	background-position: bottom left;
-	background-repeat: no-repeat;
-	background-size: 100% 2px;
-	text-decoration: none !important;
+  background-image: linear-gradient(
+    to right,
+    var(--secondary),
+    var(--secondary)
+  );
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  text-decoration: none !important;
 }
 
 img {
@@ -217,7 +226,7 @@ figure h4 {
 }
 
 figure h4::before {
-  content: '' !important;
+  content: "" !important;
 }
 
 /* Cool blockquote style from catalinred */
@@ -227,7 +236,7 @@ blockquote {
   overflow: hidden;
 
   &::before,
-  &::after{
+  &::after {
     position: absolute;
     color: #777;
   }
@@ -249,13 +258,14 @@ blockquote {
   p {
     margin: 0;
   }
-  
+
   p + p {
     margin-top: 1rem;
   }
 }
 
-.twitter-tweet, .instagram-media {
+.twitter-tweet,
+.instagram-media {
   margin-right: auto !important;
   margin-left: auto !important;
 }
@@ -264,12 +274,12 @@ blockquote {
   margin: 0;
 }
 
-ul:has(input[type=checkbox]) {
+ul:has(input[type="checkbox"]) {
   margin-left: 0 !important;
   padding-left: 0.5rem !important;
 }
 
-li > input[type=checkbox] {
+li > input[type="checkbox"] {
   margin-right: 0.2rem;
 }
 
@@ -278,7 +288,7 @@ li > input[type=checkbox] {
 }
 
 .toc {
-  font-family: 'Red Hat Mono', serif !important;
+  font-family: "Red Hat Mono", serif !important;
 }
 
 /* Viewport ≥ 768px: container = 720px */
@@ -317,7 +327,6 @@ li > input[type=checkbox] {
 
   .breadcrumb-item::before {
     display: none !important;
-    
   }
 }
 
@@ -343,11 +352,11 @@ li > input[type=checkbox] {
 }
 
 #TableOfContents > ul {
-  list-style-type: '|  ';
+  list-style-type: "|  ";
 }
 
 .badge {
-  font-family: 'Red Hat Mono', serif !important;
+  font-family: "Red Hat Mono", serif !important;
   font-weight: 600 !important;
 }
 
@@ -355,20 +364,22 @@ hr {
   border: 0 !important;
   height: 10px;
   color: var(--secondary) !important;
-  background-image: linear-gradient(-45deg,
+  background-image: linear-gradient(
+    -45deg,
     transparent,
     transparent 25%,
     currentColor 25%,
     currentColor 50%,
     transparent 50%,
     transparent 75%,
-    currentColor 75%);
+    currentColor 75%
+  );
   background-size: 4px 4px;
 }
 
 .terms-char {
   &::before {
-    content: '― ';
+    content: "― ";
   }
 }
 
@@ -396,42 +407,48 @@ article h6::before {
 }
 
 /* 设置标题大小 */
-.post h1, article h1 {
+.post h1,
+article h1 {
   font-size: 2.2em !important;
   font-weight: 700 !important;
   margin-top: 1.5em !important;
   margin-bottom: 0.5em !important;
 }
 
-.post h2, article h2 {
+.post h2,
+article h2 {
   font-size: 1.8em !important;
   font-weight: 700 !important;
   margin-top: 1.2em !important;
   margin-bottom: 0.5em !important;
 }
 
-.post h3, article h3 {
+.post h3,
+article h3 {
   font-size: 1.5em !important;
   font-weight: 700 !important;
   margin-top: 1em !important;
   margin-bottom: 0.6em !important;
 }
 
-.post h4, article h4 {
+.post h4,
+article h4 {
   font-size: 1.3em !important;
   font-weight: 700 !important;
   margin-top: 0.8em !important;
   margin-bottom: 0.5em !important;
 }
 
-.post h5, article h5 {
+.post h5,
+article h5 {
   font-size: 1.1em !important;
   font-weight: 700 !important;
   margin-top: 0.8em !important;
   margin-bottom: 0.4em !important;
 }
 
-.post h6, article h6 {
+.post h6,
+article h6 {
   font-size: 1em !important;
   font-weight: 700 !important;
   margin-top: 0.8em !important;
@@ -439,8 +456,10 @@ article h6::before {
   color: #666 !important;
 }
 
-body, main {
-  font-family: 'Literata', "Noto Serif SC", "Microsoft YaHei", "Hiragino Sans GB", serif !important;
+body,
+main {
+  font-family: "Literata", "Noto Serif SC", "Microsoft YaHei",
+    "Hiragino Sans GB", serif !important;
 }
 
 /* 修改评论区样式 */
@@ -495,40 +514,45 @@ body, main {
   }
 }
 
-/* static/css/custom.css - 强化版：高优先级 + 伪元素覆盖 */
-@media (max-width: 991px) {  /* 只移动端 */
-  .navbar-toggler {
-    border: 2px solid #ffffff !important;  /* 白边框，醒目 */
-    padding: 8px !important;  /* 扩大点击区 */
-    border-radius: 4px !important;
-  }
-  
-  .navbar-toggler-icon {
-    background-image: none !important;  /* 清默认 */
-  }
-  
-  .navbar-toggler-icon::before,
-  .navbar-toggler-icon::after {
-    background-color: #ffffff !important;  /* 横线变白 */
-    width: 25px !important;  /* 加粗 */
-    height: 3px !important;
-    border-radius: 1px !important;
-  }
-  
-  /* Bootstrap 5 默认有三条伪元素，强制定位 */
-  .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon::before {
-    content: '' !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(0);
-  }
-  
-  .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon::after {
-    content: '' !important;
-    position: absolute;
-    top: 8px;
-    left: 0;
-    transform: translateY(0);
-  }
+/* static/css/custom.css - 终极美观汉堡菜单 */
+
+/* 隐藏 Bootstrap 默认图标 */
+.navbar-toggler-icon {
+  display: none !important;
+}
+
+/* 按钮整体样式 */
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 6px !important;
+  padding: 10px 12px !important; /* 紧凑但好点 */
+  background: rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+/* 三条线容器 */
+.hamburger-lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; /* 线条间距 */
+  width: 24px;
+  height: 18px; /* 固定高度，三线刚好 */
+}
+
+/* 每条线 */
+.hamburger-lines span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* 点击动画（可选） */
+.navbar-toggler:active {
+  transform: scale(0.95);
+  background: rgba(255, 255, 255, 0.15) !important;
 }
