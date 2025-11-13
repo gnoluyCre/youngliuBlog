@@ -495,16 +495,40 @@ body, main {
   }
 }
 
-/* static/css/custom.css */
-/* 移动端汉堡菜单：醒目、好点、白得发光 */
-.navbar-toggler {
-  color: #ffffff;
-  font-size: 28px;
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 6px;
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+/* static/css/custom.css - 强化版：高优先级 + 伪元素覆盖 */
+@media (max-width: 991px) {  /* 只移动端 */
+  .navbar-toggler {
+    border: 2px solid #ffffff !important;  /* 白边框，醒目 */
+    padding: 8px !important;  /* 扩大点击区 */
+    border-radius: 4px !important;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: none !important;  /* 清默认 */
+  }
+  
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    background-color: #ffffff !important;  /* 横线变白 */
+    width: 25px !important;  /* 加粗 */
+    height: 3px !important;
+    border-radius: 1px !important;
+  }
+  
+  /* Bootstrap 5 默认有三条伪元素，强制定位 */
+  .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon::before {
+    content: '' !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+  }
+  
+  .navbar-toggler[aria-expanded="false"] .navbar-toggler-icon::after {
+    content: '' !important;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    transform: translateY(0);
+  }
 }
