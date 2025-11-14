@@ -5,7 +5,8 @@
 title = "YoungLiu"
 theme = "not-much"
 languageCode = "en-us"
-baseURL = "https://example.org/"
+# baseURL = "https://example.org/"
+baseURL = "https://youngliu.top/"
 copyright = "Sample custom notice © {year}"
 
 [markup]
