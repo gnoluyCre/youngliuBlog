@@ -2,7 +2,7 @@
     <div class="col-md">
         {{if .PrevInSection}}
         <a href="{{.PrevInSection.Permalink}}">
-            <span>previous: </span>
+            <span>上一篇: </span>
             <span>{{.PrevInSection.Title}}</span>
         </a>
         {{end}}
@@ -10,7 +10,7 @@
     <div class="col-md text-md-end">
         {{if .NextInSection}}
         <a href="{{.NextInSection.Permalink}}">
-            <span>next: </span>
+            <span>下一篇: </span>
             <span>{{.NextInSection.Title}}</span>
         </a>
         {{end}}

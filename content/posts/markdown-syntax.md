@@ -8,7 +8,7 @@ keywords:
   - hugo
   - go
   - blog
-draft: true
+draft: false
 tags:
   - markdown
   - css
