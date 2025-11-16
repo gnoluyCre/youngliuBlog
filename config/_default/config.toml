@@ -15,6 +15,7 @@ copyright = "Sample custom notice © {year}"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+      hardWraps = true  # 添加这一行
 
 
 [params]
